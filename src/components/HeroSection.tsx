@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { profile } from "@/data/profile";
-import profileAvatar from "@/assets/profile-avatar.png";
+import profileAvatar from "@/assets/Foto Formal.png";
 import { Github, Linkedin, Mail, Instagram, Sparkles, ArrowDown, Trophy } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -34,7 +34,7 @@ export const HeroSection = () => {
           animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
         />
-        
+
         {/* Grid pattern */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--border))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border))_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-20" />
       </div>
@@ -55,13 +55,13 @@ export const HeroSection = () => {
                 animate={{ opacity: [0.3, 0.6, 0.3], rotate: [0, 360] }}
                 transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
               />
-              
+
               {/* Avatar container */}
               <div className="relative w-52 h-52 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-primary/30 shadow-elevated">
                 <motion.img
                   src={profileAvatar}
                   alt={profile.name}
-                  className="w-full h-full object-cover"
+                  className="w-full -mt-5"
                   whileHover={{ scale: 1.1 }}
                   transition={{ duration: 0.5 }}
                 />
@@ -211,19 +211,13 @@ export const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, duration: 0.5 }}
-            className="grid grid-cols-3 gap-4 md:gap-8 mt-16 pt-16 border-t border-border/50"
+            className="grid grid-cols-2 gap-4 md:gap-8 mt-16 pt-16 border-t border-border/50"
           >
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold font-mono text-gradient-primary">
                 {profile.stats.projects}+
               </div>
               <div className="text-sm text-muted-foreground mt-1">Proyek</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl md:text-3xl font-bold font-mono text-gradient-accent">
-                {profile.stats.achievement}
-              </div>
-              <div className="text-sm text-muted-foreground mt-1">Prestasi</div>
             </div>
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold font-mono text-foreground">

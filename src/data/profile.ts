@@ -14,59 +14,70 @@ export interface Profile {
     linkedin?: string;
     email?: string;
     instagram?: string;
+    website?: string;
   };
   stats: {
     projects: number;
-    achievement: string;
     experience: string;
   };
 }
 
 export const profile: Profile = {
-  name: "Ahmad Rizky Pratama",
-  firstName: "Ahmad",
-  title: "Fullstack Developer",
-  tagline: "Membangun solusi digital yang berdampak",
-  shortDescription: "Seorang developer yang passionate dalam menciptakan aplikasi web modern, inovatif, dan memberikan pengalaman pengguna yang luar biasa.",
-  fullDescription: `Saya adalah seorang Fullstack Developer dengan fokus pada pengembangan aplikasi web modern menggunakan teknologi terkini. Perjalanan saya di dunia programming dimulai sejak bangku SMA, dan terus berkembang hingga saat ini.
+  name: "Damarjati Adiyuda Muktitama",
+  firstName: "Damarjati",
+  title: "Backend & Mobile Developer",
+  tagline: "Membangun sistem backend dan aplikasi yang scalable dan berdampak",
+  shortDescription:
+    "Software Engineering student di Universitas Gadjah Mada dengan fokus pada backend dan mobile development. Berpengalaman membangun RESTful API, aplikasi mobile Flutter, serta sistem terintegrasi dengan payment, logistik, dan mapping services.",
+  fullDescription: `Saya adalah mahasiswa Diploma Software Engineering di Universitas Gadjah Mada dengan minat utama pada Backend Development dan Mobile Development. Saya terbiasa membangun sistem backend yang scalable, aman, dan terintegrasi dengan berbagai layanan pihak ketiga.
 
-Ketertarikan saya pada teknologi web dimulai dari keinginan untuk menciptakan solusi digital yang tidak hanya fungsional, tetapi juga memberikan pengalaman pengguna yang optimal. Saya percaya bahwa teknologi seharusnya memudahkan kehidupan, bukan mempersulit.
+Pengalaman saya mencakup pengembangan RESTful API menggunakan Laravel dan Node.js, pengelolaan database relasional, serta integrasi sistem seperti Midtrans, RajaOngkir, dan OpenStreetMap. Selain backend, saya juga berpengalaman mengembangkan aplikasi mobile menggunakan Flutter untuk Android dan iOS.
 
-Saya aktif mengikuti berbagai kompetisi teknologi sebagai wadah untuk mengasah kemampuan dan mengukur diri dengan developer lain. Pengalaman lomba mengajarkan saya untuk bekerja di bawah tekanan, berpikir kritis, dan menghasilkan solusi inovatif dalam waktu terbatas.`,
-  avatar: "/profile-avatar.png",
+Saya aktif mengikuti kompetisi teknologi dan pernah meraih Juara 2 pada Hology Software Development Competition 2025. Pengalaman ini melatih saya untuk bekerja dalam tim, berpikir kritis, dan menghasilkan solusi berkualitas dalam waktu terbatas. Saya percaya bahwa teknologi yang baik adalah teknologi yang memberikan dampak nyata dan memudahkan penggunanya.`,
+  avatar: "/Foto Formal.png",
   skills: [
-    "React / Next.js",
-    "TypeScript",
     "Laravel",
     "Node.js",
-    "PostgreSQL / MySQL",
-    "Tailwind CSS",
+    "Express.js",
+    "RESTful API",
+    "MySQL",
+    "PostgreSQL",
+    "Firebase",
+    "Flutter",
+    "Next.js",
+    "Vue.js",
+    "JavaScript",
+    "TypeScript",
     "Docker",
-    "Git & GitHub"
+    "Git",
+    "Midtrans",
+    "RajaOngkir",
+    "OpenStreetMap",
+    "OpenRouteService",
+    "Machine Learning"
   ],
+
   interests: [
-    "Pengembangan aplikasi web fullstack",
-    "UI/UX Design dan user experience",
-    "Kompetisi teknologi dan hackathon",
-    "Open source contribution",
-    "Sharing knowledge dan mentoring"
+    "Backend system architecture",
+    "Mobile application development",
+    "Scalable web applications",
+    "Technology competitions & hackathons",
+    "Learning new technologies and system integration"
   ],
   workApproach: [
-    "User-centered design - selalu mengutamakan kebutuhan pengguna",
-    "Clean code dan best practices untuk maintainability",
-    "Iterative development dengan feedback loop yang cepat",
-    "Dokumentasi yang jelas untuk kolaborasi tim",
-    "Continuous learning untuk mengikuti perkembangan teknologi"
+    "Merancang backend yang scalable dan maintainable",
+    "Clean code dan struktur API yang konsisten",
+    "Fokus pada reliability, performance, dan security",
+    "Kolaborasi aktif dengan frontend dan mobile developer",
+    "Continuous improvement melalui testing dan feedback"
   ],
   social: {
-    github: "https://github.com/ahmadrizky",
-    linkedin: "https://linkedin.com/in/ahmadrizky",
-    email: "ahmad@example.com",
-    instagram: "https://instagram.com/ahmadrizky"
+    linkedin: "https://www.linkedin.com/in/damarjati-adiyuda-muktitama-43bb34287/",
+    email: "djamgt23@gmail.com",
+    website: "https://damarjatiam.my.id"
   },
   stats: {
-    projects: 3,
-    achievement: "Juara 2 Nasional",
-    experience: "2+ Tahun"
+    projects: 4,
+    experience: "2.5+ Tahun"
   }
 };

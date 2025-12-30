@@ -312,8 +312,13 @@ const ProjectDetail = () => {
                             />
                           </div>
                         ) : item.type === "image" && item.src ? (
-                          <div className="relative aspect-video bg-muted flex items-center justify-center">
-                            <span className="text-muted-foreground">{item.alt || "Project screenshot"}</span>
+                          <div className="relative aspect-video bg-muted">
+                            <img
+                              src={item.src.startsWith("/") ? item.src : `/${item.src}`}
+                              alt={item.alt || "Project screenshot"}
+                              className="absolute inset-0 w-full h-full object-cover"
+                              loading="lazy"
+                            />
                           </div>
                         ) : null}
                         {item.title && (
