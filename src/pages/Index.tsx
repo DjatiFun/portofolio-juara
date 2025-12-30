@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { projects, Project } from "@/data/projects";
+import { AboutSection } from "@/components/AboutSection";
 import { HeroSection } from "@/components/HeroSection";
 import { ProjectCard } from "@/components/ProjectCard";
 import { ProjectModal } from "@/components/ProjectModal";
@@ -26,28 +27,22 @@ const Index = () => {
   return (
     <>
       <Helmet>
-        <title>Portfolio Developer - Proyek & Karya Digital</title>
+        <title>Ahmad Rizky Pratama - Fullstack Developer Portfolio</title>
         <meta
           name="description"
-          content="Portfolio developer dengan proyek inovatif, termasuk platform kompetisi yang meraih Juara 2 tingkat nasional. Lihat karya digital terbaik."
+          content="Portfolio Ahmad Rizky Pratama, Fullstack Developer dengan proyek inovatif termasuk platform kompetisi Juara 2 tingkat nasional."
         />
       </Helmet>
 
       <main className="min-h-screen bg-background">
+        {/* About Section - First */}
+        <AboutSection />
+
+        {/* Projects Header */}
         <HeroSection />
 
         {/* Projects Section */}
-        <section className="container px-4 py-16 md:py-24" id="projects">
-          {/* Section Header */}
-          <div className="text-center space-y-4 mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold font-mono">
-              <span className="text-gradient-primary">Proyek</span> Unggulan
-            </h2>
-            <p className="text-muted-foreground max-w-xl mx-auto">
-              Berbagai proyek yang menunjukkan kemampuan teknis dan kreativitas dalam pengembangan software.
-            </p>
-          </div>
-
+        <section className="container px-4 pb-16 md:pb-24" id="projects">
           {/* Filters */}
           <div className="flex flex-wrap justify-center gap-2 mb-10">
             <Filter className="w-5 h-5 text-muted-foreground self-center mr-2" />
@@ -88,7 +83,7 @@ const Index = () => {
         {/* Footer */}
         <footer className="border-t border-border py-8">
           <div className="container px-4 text-center text-muted-foreground text-sm">
-            <p>© 2024 Portfolio Developer. Dibuat dengan ❤️ dan kopi.</p>
+            <p>© 2024 Ahmad Rizky Pratama. Dibuat dengan ❤️ dan kopi.</p>
           </div>
         </footer>
 
