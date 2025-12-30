@@ -110,7 +110,7 @@ Relevansi:
     title: "AmbilPrestasi - Learning Platform for Competitions",
     year: 2025,
     category: "freelance",
-    isHighlight: true,
+    isHighlight: false,
     summary: "Platform pembelajaran premium berbasis web yang menyediakan kursus terstruktur untuk meningkatkan skill presentasi, penyusunan proposal, kesiapan kompetisi, dan kompetensi lainnya guna meraih prestasi akademik maupun non-akademik.",
     description: `AmbilPrestasi adalah platform e-learning inovatif yang dirancang khusus untuk membantu pengguna di Indonesia meraih prestasi melalui pembelajaran terstruktur dan berkualitas. Platform ini menyediakan ratusan materi video, modul PDF, forum diskusi, serta konsultasi langsung dengan mentor berpengalaman.
 
