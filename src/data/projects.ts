@@ -18,11 +18,19 @@ export interface ProjectLinks {
   github?: string;
 }
 
+export interface ProjectAchievement {
+  title: string;
+  event: string;
+  level: string;
+  year: number;
+}
+
 export interface Project {
   id: string;
   title: string;
   year: number;
   category: "competition" | "personal" | "freelance";
+  isHighlight: boolean;
   summary: string;
   description: string;
   whyThisProject: string;
@@ -30,7 +38,7 @@ export interface Project {
   techStack: ProjectTechStack;
   role: string;
   responsibilities: string[];
-  achievement: string;
+  achievement: ProjectAchievement | null;
   media: ProjectMedia[];
   links: ProjectLinks;
 }
@@ -41,43 +49,69 @@ export const projects: Project[] = [
     title: "Smart Competition Web Platform",
     year: 2024,
     category: "competition",
-    summary: "Platform web inovatif untuk mengelola kompetisi akademik secara digital dengan fitur real-time scoring dan analytics.",
+    isHighlight: true,
+    summary: "Platform web inovatif untuk mengelola kompetisi akademik secara digital dengan fitur real-time scoring dan analytics dashboard yang komprehensif.",
     description: `Smart Competition Web Platform adalah solusi digital komprehensif yang dirancang untuk merevolusi cara penyelenggaraan kompetisi akademik di Indonesia. Platform ini menggabungkan teknologi modern dengan kebutuhan praktis penyelenggara lomba, menciptakan ekosistem yang efisien dan transparan.
 
-Platform ini mampu menangani registrasi peserta, penjadwalan otomatis, sistem penilaian real-time, dan dashboard analytics yang komprehensif. Dengan antarmuka yang intuitif, baik peserta maupun juri dapat mengakses informasi yang relevan dengan mudah.
+Platform ini mampu menangani registrasi peserta secara otomatis, penjadwalan dinamis, sistem penilaian real-time dengan validasi multi-layer, dan dashboard analytics yang memberikan insight mendalam tentang performa peserta dan efektivitas kompetisi.
+
+Dengan antarmuka yang intuitif dan responsif, baik peserta, juri, maupun panitia dapat mengakses informasi yang relevan dengan mudah dari berbagai perangkat. Sistem notifikasi terintegrasi memastikan semua stakeholder selalu mendapat update terbaru.
 
 Keunggulan utama platform ini adalah kemampuannya untuk mengintegrasikan berbagai aspek kompetisi dalam satu sistem terpadu, mengurangi beban administratif hingga 70% dan meningkatkan akurasi penilaian dengan sistem validasi berlapis.`,
-    whyThisProject: `Proyek ini sangat relevan untuk lomba teknologi karena menyelesaikan masalah nyata yang dihadapi oleh penyelenggara kompetisi di Indonesia. Dengan memanfaatkan teknologi web modern, platform ini mendemonstrasikan kemampuan teknis tingkat lanjut sekaligus memberikan dampak sosial yang signifikan.
+    whyThisProject: `Proyek ini dikembangkan sebagai respons terhadap tantangan nyata yang dihadapi penyelenggara kompetisi akademik di Indonesia. Banyak event masih menggunakan proses manual yang rentan error dan memakan waktu.
 
-Aspek inovasi terlihat dari implementasi sistem scoring real-time yang transparan, integrasi notifikasi multi-channel, dan dashboard analytics yang memberikan insight mendalam tentang performa peserta. Proyek ini juga menunjukkan pemahaman mendalam tentang User Experience, accessibility, dan security best practices.
+**Relevansi untuk Lomba:**
+- Menyelesaikan masalah nyata dengan solusi teknologi yang terukur
+- Mendemonstrasikan kemampuan teknis fullstack development
+- Mengintegrasikan berbagai teknologi modern dalam satu ekosistem
+- Memiliki dampak sosial yang signifikan bagi komunitas pendidikan
 
-Kombinasi antara kompleksitas teknis, relevansi sosial, dan eksekusi yang matang menjadikan proyek ini representasi ideal dari kemampuan pengembangan software modern.`,
+**Aspek Inovasi:**
+- Sistem scoring real-time dengan transparansi penuh
+- Dashboard analytics dengan visualisasi data yang informatif
+- Arsitektur scalable yang dapat menangani ribuan peserta concurrent
+- Integrasi notifikasi multi-channel (email, push, in-app)
+
+**Eksekusi Teknis:**
+- Clean architecture dengan separation of concerns yang jelas
+- Testing coverage tinggi untuk memastikan reliability
+- Dokumentasi lengkap untuk maintainability
+- Security best practices untuk melindungi data pengguna`,
     features: [
       "Sistem registrasi peserta dengan validasi dokumen otomatis",
       "Dashboard admin dengan real-time analytics dan reporting",
-      "Sistem penilaian multi-juri dengan weighted scoring",
+      "Sistem penilaian multi-juri dengan weighted scoring algorithm",
       "Notifikasi real-time via email dan push notification",
-      "Leaderboard dinamis dengan filter kategori",
-      "Export data ke PDF dan Excel",
-      "Dark mode dan responsive design",
-      "Sistem backup dan recovery otomatis"
+      "Leaderboard dinamis dengan filter kategori dan pencarian",
+      "Export data ke PDF dan Excel dengan template profesional",
+      "Dark mode dan fully responsive design",
+      "Sistem backup dan recovery otomatis",
+      "Role-based access control untuk keamanan data",
+      "API documentation dengan Swagger/OpenAPI"
     ],
     techStack: {
-      frontend: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
-      backend: ["Node.js", "Express", "Socket.io"],
-      database: ["PostgreSQL", "Redis"],
-      tools: ["Docker", "GitHub Actions", "Vercel", "Figma"]
+      frontend: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "React Query"],
+      backend: ["Laravel", "PHP 8.2", "Redis", "Socket.io"],
+      database: ["MySQL", "Redis Cache"],
+      tools: ["Docker", "GitHub Actions", "Vercel", "Figma", "Postman"]
     },
     role: "Fullstack Developer",
     responsibilities: [
-      "Merancang arsitektur sistem dan database schema",
-      "Mengembangkan frontend dengan React dan TypeScript",
-      "Membangun REST API dan WebSocket server",
-      "Implementasi sistem autentikasi dan otorisasi",
-      "Optimasi performa dan SEO",
-      "Deployment dan maintenance production server"
+      "Merancang arsitektur sistem dan database schema dari awal",
+      "Mengembangkan UI/UX design dengan pendekatan user-centered",
+      "Membangun frontend dengan Next.js dan TypeScript",
+      "Mengembangkan REST API dan WebSocket server dengan Laravel",
+      "Implementasi sistem autentikasi dan otorisasi multi-role",
+      "Optimasi performa frontend dan backend",
+      "Setup CI/CD pipeline untuk automated deployment",
+      "Menulis dokumentasi teknis dan user guide"
     ],
-    achievement: "Juara 2 Tingkat Nasional - Kompetisi Inovasi Teknologi Indonesia 2024",
+    achievement: {
+      title: "Juara 2",
+      event: "Kompetisi Inovasi Teknologi Indonesia",
+      level: "Nasional",
+      year: 2024
+    },
     media: [
       {
         type: "image",
@@ -87,7 +121,12 @@ Kombinasi antara kompleksitas teknis, relevansi sosial, dan eksekusi yang matang
       {
         type: "image",
         src: "/images/projects/smart-competition-leaderboard.png",
-        alt: "Tampilan leaderboard kompetisi"
+        alt: "Tampilan leaderboard kompetisi real-time"
+      },
+      {
+        type: "image",
+        src: "/images/projects/smart-competition-scoring.png",
+        alt: "Interface penilaian untuk juri"
       },
       {
         type: "youtube",
@@ -97,7 +136,7 @@ Kombinasi antara kompleksitas teknis, relevansi sosial, dan eksekusi yang matang
     ],
     links: {
       demo: "https://smart-competition.vercel.app",
-      github: "https://github.com/developer/smart-competition"
+      github: "https://github.com/ahmadrizky/smart-competition"
     }
   },
   {
@@ -105,6 +144,7 @@ Kombinasi antara kompleksitas teknis, relevansi sosial, dan eksekusi yang matang
     title: "EduLearn - Learning Management System",
     year: 2023,
     category: "freelance",
+    isHighlight: false,
     summary: "Platform e-learning modern untuk institusi pendidikan dengan fitur video streaming, quiz interaktif, dan progress tracking.",
     description: `EduLearn adalah Learning Management System (LMS) yang dikembangkan untuk memenuhi kebutuhan transformasi digital di sektor pendidikan Indonesia. Platform ini menyediakan ekosistem pembelajaran online yang lengkap dan mudah digunakan.
 
@@ -125,7 +165,7 @@ EduLearn juga menunjukkan kemampuan dalam membangun sistem yang scalable dan mai
       "Mobile-responsive design"
     ],
     techStack: {
-      frontend: ["Next.js", "TypeScript", "Chakra UI", "React Query"],
+      frontend: ["React", "TypeScript", "Chakra UI", "React Query"],
       backend: ["NestJS", "GraphQL", "Bull Queue"],
       database: ["MongoDB", "Elasticsearch"],
       tools: ["AWS S3", "CloudFront", "Stripe", "SendGrid"]
@@ -139,7 +179,7 @@ EduLearn juga menunjukkan kemampuan dalam membangun sistem yang scalable dan mai
       "Deployment ke production environment",
       "Training dan handover ke client"
     ],
-    achievement: "Successfully deployed untuk 5 institusi pendidikan dengan 10,000+ active users",
+    achievement: null,
     media: [
       {
         type: "image",
@@ -154,7 +194,7 @@ EduLearn juga menunjukkan kemampuan dalam membangun sistem yang scalable dan mai
     ],
     links: {
       demo: "https://edulearn-demo.vercel.app",
-      github: "https://github.com/developer/edulearn"
+      github: "https://github.com/ahmadrizky/edulearn"
     }
   },
   {
@@ -162,7 +202,8 @@ EduLearn juga menunjukkan kemampuan dalam membangun sistem yang scalable dan mai
     title: "DevTools CLI - Developer Productivity Suite",
     year: 2023,
     category: "personal",
-    summary: "Command-line toolkit untuk meningkatkan produktivitas developer dengan fitur scaffolding, code generation, dan automation.",
+    isHighlight: false,
+    summary: "Command-line toolkit open-source untuk meningkatkan produktivitas developer dengan fitur scaffolding, code generation, dan automation.",
     description: `DevTools CLI adalah proyek open-source yang lahir dari kebutuhan personal untuk mengotomatisasi tugas-tugas repetitif dalam workflow pengembangan software. Tool ini menyediakan berbagai utilitas yang membantu developer bekerja lebih efisien.
 
 Fitur utama mencakup project scaffolding dengan berbagai template, code generator untuk boilerplate umum, git workflow automation, dan integration dengan berbagai API populer. Semua command dirancang dengan prinsip UNIX philosophy - melakukan satu hal dengan baik.
@@ -170,15 +211,15 @@ Fitur utama mencakup project scaffolding dengan berbagai template, code generato
 Proyek ini telah mendapatkan lebih dari 500 stars di GitHub dan digunakan oleh developer dari berbagai negara, menunjukkan kualitas dan utilitas yang nyata.`,
     whyThisProject: `Proyek personal ini mendemonstrasikan passion terhadap software engineering dan kemampuan untuk mengidentifikasi serta menyelesaikan masalah yang dihadapi komunitas developer.
 
-Dengan membangun tool yang digunakan oleh developer lain, proyek ini menunjukkan pemahaman mendalam tentang developer experience, clean code principles, dan kemampuan dokumentasi yang baik. Kontribusi ke open-source juga menunjukkan kolaborasi dan tanggung jawab terhadap komunitas.`,
+Dengan membangun tool yang digunakan oleh developer lain, proyek ini menunjukkan pemahaman mendalam tentang developer experience, clean code principles, dan kemampuan dokumentasi yang baik.`,
     features: [
       "Project scaffolding dengan 10+ template",
       "Code generator untuk komponen React",
-      "Git workflow automation (commit, branch, release)",
+      "Git workflow automation",
       "Environment management",
       "API integration helpers",
-      "Interactive prompts dan colorful output",
-      "Plugin system untuk extensibility",
+      "Interactive prompts",
+      "Plugin system",
       "Comprehensive documentation"
     ],
     techStack: {
@@ -196,7 +237,7 @@ Dengan membangun tool yang digunakan oleh developer lain, proyek ini menunjukkan
       "Issue triage dan pull request review",
       "Release management"
     ],
-    achievement: "500+ GitHub Stars, 50+ Contributors, Featured di JavaScript Weekly",
+    achievement: null,
     media: [
       {
         type: "image",
@@ -206,7 +247,23 @@ Dengan membangun tool yang digunakan oleh developer lain, proyek ini menunjukkan
     ],
     links: {
       demo: "https://www.npmjs.com/package/devtools-cli",
-      github: "https://github.com/developer/devtools-cli"
+      github: "https://github.com/ahmadrizky/devtools-cli"
     }
   }
 ];
+
+// Helper function to get highlight project
+export const getHighlightProject = (): Project | undefined => {
+  return projects.find(p => p.isHighlight);
+};
+
+// Helper function to get project by ID
+export const getProjectById = (id: string): Project | undefined => {
+  return projects.find(p => p.id === id);
+};
+
+// Helper function to filter projects by category
+export const getProjectsByCategory = (category: Project["category"] | "all"): Project[] => {
+  if (category === "all") return projects;
+  return projects.filter(p => p.category === category);
+};
